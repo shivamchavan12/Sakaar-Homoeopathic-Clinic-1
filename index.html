@@ -9,17 +9,30 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Poppins', sans-serif; /* Default font for the body */
-            background-color: #f7f7f7; /* Light gray background */
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #d6e9ff, #e0f7ff, #f1fbff, #f7fcfe);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             margin: 0;
         }
-        main {
-            flex: 1; /* Allows the main content to grow and take available space */
+        /* Animation for fading the gradient */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
-
+        main {
+            flex: 1;
+        }
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
         }
@@ -49,44 +62,100 @@
             transform: translateY(-5px);
         }
 
+        header {
+            position: relative;
+            text-align: center;
+            background-color: #fff;
+            padding: 1rem;
+            z-index: 100;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #333;
+        }
+
+        nav a:hover {
+            color: #20B2AA;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Navigation Bar -->
-    <header class="bg-gradient-to-r from-teal-500 to-blue-600 text-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto flex items-center justify-between p-4">
-            <a href="index.html" class="text-3xl font-extrabold tracking-wide">Sakaar Homoeopathic</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="index.html" class="hover:text-teal-200 transition duration-300">Home</a>
-                <a href="about.html" class="hover:text-teal-200 transition duration-300">About</a>
-                <a href="clinic.html" class="hover:text-teal-200 transition duration-300">Clinic</a>
-                <a href="gallery.html" class="hover:text-teal-200 transition duration-300">Gallery</a>
-                <a href="contact.html" class="hover:text-teal-200 transition duration-300">Contact</a>
-                <a href="appointment.html" class="hover:text-teal-200 transition duration-300">Appointment</a>
-                <a href="testimonials.html" class="hover:text-teal-200 transition duration-300">Testimonials</a>
-                <a href="awards.html" class="hover:text-teal-200 transition duration-300">Awards</a>
+    <header class="bg-gradient-to-r from-teal-500 to-blue-600 text-white shadow-md  top-0 z-50">
+        <div class="container mx-auto flex flex-col items-center justify-center p-4">
+            <!-- Logo -->
+            <img src="logo.png" alt="Clinic Logo" class="logo mb-4">
+            <!-- Title -->
+            <h1 class="text-3xl font-extrabold tracking-wide text-white">Sakaar Homoeopathic Clinic</h1>
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden md:flex space-x-8 mt-4">
+                <a href="index.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Home</a>
+                <a href="about.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">About</a>
+                <a href="clinic.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Clinic</a>
+                <a href="gallery.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Gallery</a>
+                <a href="contact.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Contact</a>
+                <a href="appointment.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Appointment</a>
+                <a href="testimonials.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Testimonials</a>
+                <a href="awards.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Awards</a>
             </nav>
-            <button class="md:hidden text-2xl focus:outline-none" id="menu-toggle">&#9776;</button>
+            <!-- Mobile Menu Toggle Button -->
+            <button class="md:hidden text-2xl focus:outline-none ml-auto" id="menu-toggle">&#9776;</button>
         </div>
         <nav id="mobile-menu" class="hidden md:hidden flex flex-col bg-teal-600 text-white">
-            <a href="index.html" class="px-4 py-2 hover:bg-teal-500 transition">Home</a>
-            <a href="about.html" class="px-4 py-2 hover:bg-teal-500 transition">About</a>
-            <a href="clinic.html" class="px-4 py-2 hover:bg-teal-500 transition">Clinic</a>
-            <a href="gallery.html" class="px-4 py-2 hover:bg-teal-500 transition">Gallery</a>
-            <a href="contact.html" class="px-4 py-2 hover:bg-teal-500 transition">Contact</a>
-            <a href="appointment.html" class="px-4 py-2 hover:bg-teal-500 transition">Appointment</a>
-            <a href="testimonials.html" class="px-4 py-2 hover:bg-teal-500 transition">Testimonials</a>
-            <a href="awards.html" class="px-4 py-2 hover:bg-teal-500 transition">Awards</a>
+            <a href="index.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Home</a>
+            <a href="about.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">About</a>
+            <a href="clinic.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Clinic</a>
+            <a href="gallery.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Gallery</a>
+            <a href="contact.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Contact</a>
+            <a href="appointment.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Appointment</a>
+            <a href="testimonials.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Testimonials</a>
+            <a href="awards.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Awards</a>
         </nav>
     </header>
 
     <!-- Welcome Section -->
     <section class="container mx-auto my-8 p-6 bg-gradient-to-r from-white to-gray-50 rounded-lg shadow-lg fade-in">
-        <h1 class="text-3xl font-extrabold text-teal-600 mb-4 text-center md:text-left">Welcome to Sakaar Homoeopathic Clinic</h1>
-        <p class="text-gray-700 leading-7 text-lg">A Practo certified clinic with professional infrastructure, including a well-equipped homoeopathic pharmacy, dedicated to enhancing the quality of patients' lives...</p>
-        <p class="mt-4 text-gray-700 leading-7 text-lg">In response to the challenges posed by the pandemic, we also offer 'Online Medical Consultation'...</p>
-    </section>
+    <h1 class="text-3xl font-extrabold text-teal-600 mb-4 text-center md:text-left">Welcome to Sakaar Homoeopathic Clinic</h1>
+    <p class="text-gray-700 leading-7 text-lg">
+        A Practo certified clinic with professional infrastructure, including a well-equipped homoeopathic pharmacy, dedicated to enhancing the quality of patients' lives by bringing back complete HEALTH and HARMONY with HOMOEOPATHY! 
+    </p>
+    <p class="mt-4 text-gray-700 leading-7 text-lg">
+        The clinic offers cure under four segments:
+    </p>
+    <ul class="list-disc ml-6 text-gray-700 leading-7 text-lg">
+        <li>Homoeopathy for all</li>
+        <li>Thyroid specialization</li>
+        <li>Child and Adolescent Psychology</li>
+        <li>Counselling</li>
+    </ul>
+    <p class="mt-4 text-gray-700 leading-7 text-lg">
+        Sakaar Homoeopathic Clinic is also offering ‘Online Medical Consultation’ to tackle the commuting difficulties since the pandemic.
+    </p>
+</section>
+
 
     <!-- Doctor's Information Section -->
     <section id="doctor-info" class="container mx-auto my-8 p-6 bg-white rounded-lg shadow-lg fade-in">
@@ -114,7 +183,7 @@
     <section id="director-message" class="container mx-auto my-8 p-6 bg-gradient-to-r from-white to-teal-50 rounded-lg shadow-lg fade-in">
         <h2 class="text-2xl font-semibold text-teal-600 text-center md:text-left">Message from the Director</h2>
         <blockquote class="mt-6 text-gray-700 italic border-l-4 border-teal-600 pl-6 text-lg">
-            “Entrepreneurship has experienced an upswing in the number of women willing to be a part of it...
+            “Entrepreneurship has experienced an upswing in the number of women willing to be a part of it. However, in this dynamic journey, they are somehow compelled to neglect their health. These days, women seem to adopt a role opposite to their nature, thinking it is the only possible way to be at par with men, but they must be aware of the fact that their elegant yet passionate feminist character is in its way the best path to success. It should be treated as a blessing to be a ‘woman’ and everyday should be owed to celebrate feminism.”
         </blockquote>
     </section>
 
@@ -131,7 +200,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Add fade-in animation on scroll
         const fadeInElements = document.querySelectorAll('.fade-in');
 
         const observer = new IntersectionObserver(entries => {

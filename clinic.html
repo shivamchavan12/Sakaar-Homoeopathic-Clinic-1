@@ -9,12 +9,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Poppins', sans-serif; /* Default font for the body */
-            background-color: #f7f7f7; /* Light gray background */
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #d6e9ff, #e0f7ff, #f1fbff, #f7fcfe);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             margin: 0;
+        }
+        /* Animation for fading the gradient */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         main {
             flex: 1; /* Allows the main content to grow and take available space */
@@ -49,32 +63,39 @@
 <body class="text-gray-800">
 
     <!-- Navigation Bar -->
-    <header class="bg-gradient-to-r from-teal-500 to-blue-600 text-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto flex items-center justify-between p-4">
-            <a href="index.html" class="text-3xl font-extrabold tracking-wide">Sakaar Homoeopathic</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="clinic.html" class="nav-link">Clinic</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-                <a href="appointment.html" class="nav-link">Appointment</a>
-                <a href="testimonials.html" class="nav-link">Testimonials</a>
-                <a href="awards.html" class="nav-link">Awards</a>
+            <header class="bg-gradient-to-r from-teal-500 to-blue-600 text-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto flex items-center justify-between p-4">
+                <!-- Logo and Title with redirect to index.html -->
+                <a href="index.html" class="flex items-center">
+                    <img src="logo.png" alt="Clinic Logo" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <span class="text-3xl font-extrabold tracking-wide">Sakaar Homoeopathic</span>
+                </a>
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="font-bold hover:text-teal-200 transition duration-300">Home</a>
+                    <a href="about.html" class="font-bold hover:text-teal-200 transition duration-300">About</a>
+                    <a href="clinic.html" class="font-bold hover:text-teal-200 transition duration-300">Clinic</a>
+                    <a href="gallery.html" class="font-bold hover:text-teal-200 transition duration-300">Gallery</a>
+                    <a href="contact.html" class="font-bold hover:text-teal-200 transition duration-300">Contact</a>
+                    <a href="appointment.html" class="font-bold hover:text-teal-200 transition duration-300">Appointment</a>
+                    <a href="testimonials.html" class="font-bold hover:text-teal-200 transition duration-300">Testimonials</a>
+                    <a href="awards.html" class="font-bold hover:text-teal-200 transition duration-300">Awards</a>
+                </nav>
+                <!-- Mobile Menu Toggle Button -->
+                <button class="md:hidden text-2xl focus:outline-none" id="menu-toggle">&#9776;</button>
+            </div>
+            <!-- Mobile Navigation Menu -->
+            <nav id="mobile-menu" class="hidden md:hidden flex flex-col bg-teal-600 text-white">
+                <a href="index.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Home</a>
+                <a href="about.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">About</a>
+                <a href="clinic.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Clinic</a>
+                <a href="gallery.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Gallery</a>
+                <a href="contact.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Contact</a>
+                <a href="appointment.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Appointment</a>
+                <a href="testimonials.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Testimonials</a>
+                <a href="awards.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Awards</a>
             </nav>
-            <button class="md:hidden text-2xl focus:outline-none" id="menu-toggle">&#9776;</button>
-        </div>
-        <nav id="mobile-menu" class="hidden md:hidden flex flex-col bg-teal-600 text-white">
-            <a href="index.html" class="px-4 py-2 hover:bg-teal-500 transition">Home</a>
-            <a href="about.html" class="px-4 py-2 hover:bg-teal-500 transition">About</a>
-            <a href="clinic.html" class="px-4 py-2 hover:bg-teal-500 transition">Clinic</a>
-            <a href="gallery.html" class="px-4 py-2 hover:bg-teal-500 transition">Gallery</a>
-            <a href="contact.html" class="px-4 py-2 hover:bg-teal-500 transition">Contact</a>
-            <a href="appointment.html" class="px-4 py-2 hover:bg-teal-500 transition">Appointment</a>
-            <a href="testimonials.html" class="px-4 py-2 hover:bg-teal-500 transition">Testimonials</a>
-            <a href="awards.html" class="px-4 py-2 hover:bg-teal-500 transition">Awards</a>
-        </nav>
-    </header>
+        </header>
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-8 flex-grow">

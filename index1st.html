@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakaar Homoeopathic</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Default font for the body */
+            background-color: #f7f7f7; /* Light gray background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        main {
+            flex: 1; /* Allows the main content to grow and take available space */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0px 0px 20px rgba(72, 232, 227, 0.7);
+            transform: translateY(-5px);
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navigation Bar -->
+    <header class="bg-gradient-to-r from-teal-500 to-blue-600 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="index.html" class="text-3xl font-extrabold tracking-wide">Sakaar Homoeopathic</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-teal-200 transition duration-300">Home</a>
+                <a href="about.html" class="hover:text-teal-200 transition duration-300">About</a>
+                <a href="clinic.html" class="hover:text-teal-200 transition duration-300">Clinic</a>
+                <a href="gallery.html" class="hover:text-teal-200 transition duration-300">Gallery</a>
+                <a href="contact.html" class="hover:text-teal-200 transition duration-300">Contact</a>
+                <a href="appointment.html" class="hover:text-teal-200 transition duration-300">Appointment</a>
+                <a href="testimonials.html" class="hover:text-teal-200 transition duration-300">Testimonials</a>
+                <a href="awards.html" class="hover:text-teal-200 transition duration-300">Awards</a>
+            </nav>
+            <button class="md:hidden text-2xl focus:outline-none" id="menu-toggle">&#9776;</button>
+        </div>
+        <nav id="mobile-menu" class="hidden md:hidden flex flex-col bg-teal-600 text-white">
+            <a href="index.html" class="px-4 py-2 hover:bg-teal-500 transition">Home</a>
+            <a href="about.html" class="px-4 py-2 hover:bg-teal-500 transition">About</a>
+            <a href="clinic.html" class="px-4 py-2 hover:bg-teal-500 transition">Clinic</a>
+            <a href="gallery.html" class="px-4 py-2 hover:bg-teal-500 transition">Gallery</a>
+            <a href="contact.html" class="px-4 py-2 hover:bg-teal-500 transition">Contact</a>
+            <a href="appointment.html" class="px-4 py-2 hover:bg-teal-500 transition">Appointment</a>
+            <a href="testimonials.html" class="px-4 py-2 hover:bg-teal-500 transition">Testimonials</a>
+            <a href="awards.html" class="px-4 py-2 hover:bg-teal-500 transition">Awards</a>
+        </nav>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="container mx-auto my-8 p-6 bg-gradient-to-r from-white to-gray-50 rounded-lg shadow-lg fade-in">
+        <h1 class="text-3xl font-extrabold text-teal-600 mb-4 text-center md:text-left">Welcome to Sakaar Homoeopathic Clinic</h1>
+        <p class="text-gray-700 leading-7 text-lg">A Practo certified clinic with professional infrastructure, including a well-equipped homoeopathic pharmacy, dedicated to enhancing the quality of patients' lives...</p>
+        <p class="mt-4 text-gray-700 leading-7 text-lg">In response to the challenges posed by the pandemic, we also offer 'Online Medical Consultation'...</p>
+    </section>
+
+    <!-- Doctor's Information Section -->
+    <section id="doctor-info" class="container mx-auto my-8 p-6 bg-white rounded-lg shadow-lg fade-in">
+        <h2 class="text-2xl font-semibold text-teal-600 text-center md:text-left">Meet Our Specialist</h2>
+        <div class="flex flex-col md:flex-row items-center mt-6">
+            <img src="dr.Sarika_Kiran_Vaidya.png" alt="Doctor's Photo" class="w-40 h-40 rounded-full shadow-md hover-glow">
+            <div class="mt-6 md:mt-0 md:ml-8">
+                <h3 class="text-lg font-bold text-gray-800">Dr. Sarika Vaidya</h3>
+                <p class="mt-3 text-gray-700"><strong>Qualifications:</strong> M.D. Homoeopathy</p>
+                <p class="mt-3 text-gray-700"><strong>Experience:</strong> 23 years of successful practice</p>
+                <p class="mt-3 text-gray-700"><strong>Specialties:</strong> Classical Homoeopathy</p>
+                <p class="mt-3 text-gray-700"><strong>Profile:</strong></p>
+                <ul class="mt-3 text-gray-700 list-disc ml-5">
+                    <li>Senior Homoeopathic Consultant with a remarkable academic record.</li>
+                    <li>Expert in diagnosing diseases, understanding human behavior, and prescribing accurate treatments.</li>
+                    <li>Dedicated to achieving rapid and gentle cures for patients.</li>
+                    <li>Associate of several renowned medical and homoeopathic institutions in India.</li>
+                </ul>
+                <p class="mt-3 text-gray-700"><strong>Contact:</strong> [Phone Number] | [Email]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Director's Message Section -->
+    <section id="director-message" class="container mx-auto my-8 p-6 bg-gradient-to-r from-white to-teal-50 rounded-lg shadow-lg fade-in">
+        <h2 class="text-2xl font-semibold text-teal-600 text-center md:text-left">Message from the Director</h2>
+        <blockquote class="mt-6 text-gray-700 italic border-l-4 border-teal-600 pl-6 text-lg">
+            “Entrepreneurship has experienced an upswing in the number of women willing to be a part of it...
+        </blockquote>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-4 mt-8">
+        <p class="text-center">&copy; 2024 Homoeopathy Clinic. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Add fade-in animation on scroll
+        const fadeInElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        fadeInElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

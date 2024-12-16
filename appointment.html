@@ -9,12 +9,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
        body {
-            font-family: 'Poppins', sans-serif; /* Default font for the body */
-            background-color: #f7f7f7; /* Light gray background */
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #d6e9ff, #e0f7ff, #f1fbff, #f7fcfe);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             margin: 0;
+        }
+        /* Animation for fading the gradient */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         main {
             flex: 1; /* Allows the main content to grow and take available space */
@@ -56,85 +70,114 @@
     <!-- Navigation Bar -->
     <header class="bg-gradient-to-r from-teal-500 to-blue-600 text-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex items-center justify-between p-4">
-            <a href="index.html" class="text-3xl font-extrabold tracking-wide">Sakaar Homoeopathic</a>
+            <!-- Logo and Title with redirect to index.html -->
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="Clinic Logo" class="w-12 h-12 rounded-full object-cover mr-4">
+                <span class="text-3xl font-extrabold tracking-wide">Sakaar Homoeopathic</span>
+            </a>
+            <!-- Desktop Navigation Menu -->
             <nav class="hidden md:flex space-x-8">
-                <a href="index.html" class="hover:text-teal-200 transition duration-300">Home</a>
-                <a href="about.html" class="hover:text-teal-200 transition duration-300">About</a>
-                <a href="clinic.html" class="hover:text-teal-200 transition duration-300">Clinic</a>
-                <a href="gallery.html" class="hover:text-teal-200 transition duration-300">Gallery</a>
-                <a href="contact.html" class="hover:text-teal-200 transition duration-300">Contact</a>
-                <a href="appointment.html" class="hover:text-teal-200 transition duration-300">Appointment</a>
-                <a href="testimonials.html" class="hover:text-teal-200 transition duration-300">Testimonials</a>
-                <a href="awards.html" class="hover:text-teal-200 transition duration-300">Awards</a>
+                <a href="index.html" class="font-bold hover:text-teal-200 transition duration-300">Home</a>
+                <a href="about.html" class="font-bold hover:text-teal-200 transition duration-300">About</a>
+                <a href="clinic.html" class="font-bold hover:text-teal-200 transition duration-300">Clinic</a>
+                <a href="gallery.html" class="font-bold hover:text-teal-200 transition duration-300">Gallery</a>
+                <a href="contact.html" class="font-bold hover:text-teal-200 transition duration-300">Contact</a>
+                <a href="appointment.html" class="font-bold hover:text-teal-200 transition duration-300">Appointment</a>
+                <a href="testimonials.html" class="font-bold hover:text-teal-200 transition duration-300">Testimonials</a>
+                <a href="awards.html" class="font-bold hover:text-teal-200 transition duration-300">Awards</a>
             </nav>
+            <!-- Mobile Menu Toggle Button -->
             <button class="md:hidden text-2xl focus:outline-none" id="menu-toggle">&#9776;</button>
         </div>
+        <!-- Mobile Navigation Menu -->
         <nav id="mobile-menu" class="hidden md:hidden flex flex-col bg-teal-600 text-white">
-            <a href="index.html" class="px-4 py-2 hover:bg-teal-500 transition">Home</a>
-            <a href="about.html" class="px-4 py-2 hover:bg-teal-500 transition">About</a>
-            <a href="clinic.html" class="px-4 py-2 hover:bg-teal-500 transition">Clinic</a>
-            <a href="gallery.html" class="px-4 py-2 hover:bg-teal-500 transition">Gallery</a>
-            <a href="contact.html" class="px-4 py-2 hover:bg-teal-500 transition">Contact</a>
-            <a href="appointment.html" class="px-4 py-2 hover:bg-teal-500 transition">Appointment</a>
-            <a href="testimonials.html" class="px-4 py-2 hover:bg-teal-500 transition">Testimonials</a>
-            <a href="awards.html" class="px-4 py-2 hover:bg-teal-500 transition">Awards</a>
+            <a href="index.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Home</a>
+            <a href="about.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">About</a>
+            <a href="clinic.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Clinic</a>
+            <a href="gallery.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Gallery</a>
+            <a href="contact.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Contact</a>
+            <a href="appointment.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Appointment</a>
+            <a href="testimonials.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Testimonials</a>
+            <a href="awards.html" class="font-bold px-4 py-2 hover:bg-teal-500 transition">Awards</a>
         </nav>
     </header>
 
     <!-- Appointment Booking Form -->
     <main class="container mx-auto p-6 flex-grow">
-        <section id="appointment" class="bg-white rounded-lg shadow-lg p-6">
-            <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Book Appointment</h2>
-            <form id="appointment-form" class="space-y-4">
-                <div>
-                    <label for="appt-name" class="block font-semibold text-gray-700">Name:</label>
-                    <input type="text" id="appt-name" name="name" required
-                        class="w-full p-2 border border-gray-300 rounded">
+    <section id="appointment" class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Book Appointment</h2>
+        
+        <!-- Flex container to split the content into two parts -->
+        <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0">
+            <!-- Left part (Image or any relevant content) -->
+            <div class="flex-1 space-y-6">
+                <!-- First image -->
+                <div class="mb-6">
+                    <img src="homo1.png" alt="Image 1" class="w-full h-auto max-w-md rounded-lg shadow-md mx-auto">
                 </div>
-                <div>
-                    <label for="phone" class="block font-semibold text-gray-700">Phone No.:</label>
-                    <input type="tel" id="phone" name="phone" required
-                        class="w-full p-2 border border-gray-300 rounded">
+
+                <!-- Second image -->
+                <div class="mb-6">
+                    <img src="homo2.png" alt="Image 2" class="w-full h-auto max-w-md rounded-lg shadow-md mx-auto">
                 </div>
-                <div>
-                    <label for="age" class="block font-semibold text-gray-700">Age:</label>
-                    <input type="number" id="age" name="age" required
-                        class="w-full p-2 border border-gray-300 rounded">
-                </div>
-                <div>
-                    <label for="gender" class="block font-semibold text-gray-700">Gender:</label>
-                    <select id="gender" name="gender" class="w-full p-2 border border-gray-300 rounded">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="appt-date" class="block font-semibold text-gray-700">Appointment Date:</label>
-                    <input type="date" id="appt-date" name="date" required
-                        class="w-full p-2 border border-gray-300 rounded">
-                </div>
-                <div>
-                    <label for="complaints" class="block font-semibold text-gray-700">Complaints/Symptoms:</label>
-                    <textarea id="complaints" name="complaints" required
-                        class="w-full p-2 border border-gray-300 rounded"></textarea>
-                </div>
-                <div>
-                    <label for="remarks" class="block font-semibold text-gray-700">Remarks:</label>
-                    <textarea id="remarks" name="remarks"
-                        class="w-full p-2 border border-gray-300 rounded"></textarea>
-                </div>
-                <div>
-                    <label for="email" class="block font-semibold text-gray-700">Your Email:</label>
-                    <input type="email" id="email" name="email" required
-                        class="w-full p-2 border border-gray-300 rounded">
-                </div>
-                <button type="submit"
-                    class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-                    Book Appointment
-                </button>
-            </form>
-        </section>
-    </main>
+            </div>
+
+            <!-- Right part (Appointment Form) -->
+            <div class="lg:w-1/2 flex-1">
+                <form id="appointment-form" class="space-y-6">
+                    <div class="space-y-2">
+                        <label for="appt-name" class="block font-semibold text-gray-700">Name:</label>
+                        <input type="text" id="appt-name" name="name" required
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="phone" class="block font-semibold text-gray-700">Phone No.:</label>
+                        <input type="tel" id="phone" name="phone" required
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="age" class="block font-semibold text-gray-700">Age:</label>
+                        <input type="number" id="age" name="age" required
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="gender" class="block font-semibold text-gray-700">Gender:</label>
+                        <select id="gender" name="gender" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="appt-date" class="block font-semibold text-gray-700">Appointment Date:</label>
+                        <input type="date" id="appt-date" name="date" required
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="complaints" class="block font-semibold text-gray-700">Complaints/Symptoms:</label>
+                        <textarea id="complaints" name="complaints" required
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="remarks" class="block font-semibold text-gray-700">Remarks:</label>
+                        <textarea id="remarks" name="remarks"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="email" class="block font-semibold text-gray-700">Your Email:</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500 transition">
+                        Book Appointment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
 
     <footer class="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-4 mt-auto">
         <p class="text-center">&copy; 2024 Homoeopathy Clinic. All rights reserved.</p>
@@ -152,27 +195,22 @@
 
         // Initialize EmailJS
         (function() {
-            emailjs.init("f_o5os-Jb0pknRvPS"); // Replace with your EmailJS user ID
+            emailjs.init("f_o5os-Jb0pknRvPS"); // Replace with your own User ID
         })();
 
         // Form submission handling
         document.getElementById('appointment-form').addEventListener('submit', function(event) {
             event.preventDefault();
+            const form = event.target;
 
-            const formData = {
-                from_name: document.getElementById('appt-name').value,
-                from_phone: document.getElementById('phone').value,
-                from_age: document.getElementById('age').value,
-                from_gender: document.getElementById('gender').value,
-                from_date: document.getElementById('appt-date').value,
-                from_complaints: document.getElementById('complaints').value,
-                from_remarks: document.getElementById('remarks').value,
-                from_email: document.getElementById('email').value
-            };
-
-            emailjs.send("service_yho168l", "template_apz2jzi", formData)
-                .then(() => alert("Your appointment request has been sent successfully!"))
-                .catch(() => alert("Something went wrong. Please try again."));
+            // Submit the form data to EmailJS
+            emailjs.sendForm('service_123456', 'template_abc123', form)
+                .then(function(response) {
+                    alert('Appointment booked successfully!');
+                    form.reset(); // Reset form fields
+                }, function(error) {
+                    alert('Failed to send email. Please try again later.');
+                });
         });
     </script>
 </body>
