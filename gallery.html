@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakaar Homoeopathic</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Default font for the body */
+            background-color: #f7f7f7; /* Light gray background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        main {
+            flex: 1; /* Allows the main content to grow and take available space */
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif; /* Elegant font for headings */
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #81c784; /* Soft green on hover */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navigation Bar -->
+    <header class="bg-gradient-to-r from-teal-500 to-blue-600 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="index.html" class="text-3xl font-extrabold tracking-wide">Sakaar Homoeopathic</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="clinic.html" class="nav-link">Clinic</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="appointment.html" class="nav-link">Appointment</a>
+                <a href="testimonials.html" class="nav-link">Testimonials</a>
+                <a href="awards.html" class="nav-link">Awards</a>
+            </nav>
+            <button class="md:hidden text-2xl focus:outline-none" id="menu-toggle">&#9776;</button>
+        </div>
+        <nav id="mobile-menu" class="hidden md:hidden flex flex-col bg-teal-600 text-white">
+            <a href="index.html" class="px-4 py-2 hover:bg-teal-500 transition">Home</a>
+            <a href="about.html" class="px-4 py-2 hover:bg-teal-500 transition">About</a>
+            <a href="clinic.html" class="px-4 py-2 hover:bg-teal-500 transition">Clinic</a>
+            <a href="gallery.html" class="px-4 py-2 hover:bg-teal-500 transition">Gallery</a>
+            <a href="contact.html" class="px-4 py-2 hover:bg-teal-500 transition">Contact</a>
+            <a href="appointment.html" class="px-4 py-2 hover:bg-teal-500 transition">Appointment</a>
+            <a href="testimonials.html" class="px-4 py-2 hover:bg-teal-500 transition">Testimonials</a>
+            <a href="awards.html" class="px-4 py-2 hover:bg-teal-500 transition">Awards</a>
+        </nav>
+    </header>
+
+    <!-- Photo Gallery -->
+    <main class="container mx-auto p-6 flex-grow">
+        <section id="gallery">
+            <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Photo Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image 1 -->
+                <div class="relative overflow-hidden group rounded-lg shadow-lg">
+                    <img src="clinic1.jpeg" alt="Clinic Image 1" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <p class="text-white font-semibold">Clinic Image 1</p>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="relative overflow-hidden group rounded-lg shadow-lg">
+                    <img src="clinic2.jpeg" alt="Clinic Image 2" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <p class="text-white font-semibold">Clinic Image 2</p>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="relative overflow-hidden group rounded-lg shadow-lg">
+                    <img src="clinic3.jpeg" alt="Clinic Image 3" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <p class="text-white font-semibold">Clinic Image 3</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-4 mt-auto">
+        <p class="text-center">&copy; 2024 Homoeopathy Clinic. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Add fade-in effect on page load
+        window.addEventListener('load', () => {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            fadeInElements.forEach(element => {
+                element.classList.add('show');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakaar Homoeopathic</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Default font for the body */
+            background-color: #f7f7f7; /* Light gray background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        main {
+            flex: 1; /* Allows the main content to grow and take available space */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0px 0px 20px rgba(72, 232, 227, 0.7);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navigation Bar -->
+    <header class="bg-gradient-to-r from-teal-500 to-blue-600 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="index.html" class="text-3xl font-extrabold tracking-wide">Sakaar Homoeopathic</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-teal-200 transition duration-300">Home</a>
+                <a href="about.html" class="hover:text-teal-200 transition duration-300">About</a>
+                <a href="clinic.html" class="hover:text-teal-200 transition duration-300">Clinic</a>
+                <a href="gallery.html" class="hover:text-teal-200 transition duration-300">Gallery</a>
+                <a href="contact.html" class="hover:text-teal-200 transition duration-300">Contact</a>
+                <a href="appointment.html" class="hover:text-teal-200 transition duration-300">Appointment</a>
+                <a href="testimonials.html" class="hover:text-teal-200 transition duration-300">Testimonials</a>
+                <a href="awards.html" class="hover:text-teal-200 transition duration-300">Awards</a>
+            </nav>
+            <button class="md:hidden text-2xl focus:outline-none" id="menu-toggle">&#9776;</button>
+        </div>
+        <nav id="mobile-menu" class="hidden md:hidden flex flex-col bg-teal-600 text-white">
+            <a href="index.html" class="px-4 py-2 hover:bg-teal-500 transition">Home</a>
+            <a href="about.html" class="px-4 py-2 hover:bg-teal-500 transition">About</a>
+            <a href="clinic.html" class="px-4 py-2 hover:bg-teal-500 transition">Clinic</a>
+            <a href="gallery.html" class="px-4 py-2 hover:bg-teal-500 transition">Gallery</a>
+            <a href="contact.html" class="px-4 py-2 hover:bg-teal-500 transition">Contact</a>
+            <a href="appointment.html" class="px-4 py-2 hover:bg-teal-500 transition">Appointment</a>
+            <a href="testimonials.html" class="px-4 py-2 hover:bg-teal-500 transition">Testimonials</a>
+            <a href="awards.html" class="px-4 py-2 hover:bg-teal-500 transition">Awards</a>
+        </nav>
+    </header>
+
+    <!-- Testimonials Section -->
+    <main class="container mx-auto p-6 flex-grow">
+        <h2 class="text-3xl font-bold text-center text-blue-600 mb-6">Testimonials</h2>
+
+        <!-- Horizontal Testimonial -->
+        <div class="bg-white p-4 rounded-lg shadow-lg mb-6 fade-in">
+            <p class="text-gray-700 italic text-lg">
+                "People are what matter in this world - not money or fame or buildings, the legacy or organizations or institutions. Only people. The legacy of successful leaders lives on through the people they touch along the way."
+            </p>
+        </div>
+
+        <!-- Vertical Testimonials -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Testimonial Card -->
+            <div class="bg-white p-4 rounded-lg shadow-lg section-card fade-in">
+                <h3 class="text-xl font-semibold text-blue-600">Ms. Param</h3>
+                <p class="text-gray-700">
+                    "Happy to share that I have become a Chartered Accountant now and secured AIR 41 in CA Final. During my study leave, your medicines helped me stay healthy physically and also have a peaceful and stress-free mind during the challenging period."
+                </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-lg section-card fade-in">
+                <h3 class="text-xl font-semibold text-blue-600">Mrs. Swapna R</h3>
+                <p class="text-gray-700">
+                    "Everyone likes a doctor who listens all our health issues carefully and also understands all the health problems hidden between the lines during our explanation!!! I am happy that I met that amazing doctor for me & my family Dr. Sarika Vaidya!! Her involvement, patience, calm nature & expertise in healing the health issues are incredible."
+                </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-lg section-card fade-in">
+                <h3 class="text-xl font-semibold text-blue-600">Mrs. Ashwini</h3>
+                <p class="text-gray-700">
+                    "मी सौ अश्विनी अनिल देशपांडे वय.. ६३.. मला थॉयराईड डिटेक्ट झाल त्यावेळी मला थकवा येत होता.. पाय खूप दुखायचे ऑलिव्हपथीक ट्रिटमेंन्ट चालू होती. मला डॉ. सारिका चे होमियोपथिक औषध घेतले आणि माझ्या मध्ये खूप सकारात्मक बदल झाला."
+                </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-lg section-card fade-in">
+                <h3 class="text-xl font-semibold text-blue-600">Mrs. Meera</h3>
+                <p class="text-gray-700">
+                    "I started feeling better because of the comfort or understanding she has with the patient. The way Sarika ma'am treats with her words is more than medicine is what I feel."
+                </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-lg section-card fade-in">
+                <h3 class="text-xl font-semibold text-blue-600">Mr. Abhay</h3>
+                <p class="text-gray-700">
+                    "I am in Melbourne and had been suffering from chronic digestive issues causing gastric trouble. I took a lot of medication here and tried some ayurvedic tablets. However, in May 2022, I visited Sakaar Homoeopathy and met Dr. Sarika. She gave me confidence that chronic issues can be solved."
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-4 mt-auto">
+        <p class="text-center">&copy; 2024 Homoeopathy Clinic. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+         const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+
+        // Add fade-in animation on scroll
+        const fadeInElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        fadeInElements.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
