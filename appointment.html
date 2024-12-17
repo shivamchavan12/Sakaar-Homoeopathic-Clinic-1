@@ -102,81 +102,100 @@
         </nav>
     </header>
 
-    <!-- Appointment Booking Form -->
-    <main class="container mx-auto p-6 flex-grow">
-    <section id="appointment" class="bg-white rounded-lg shadow-lg p-6">
-        <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Book Appointment</h2>
-        
-        <!-- Flex container to split the content into two parts -->
-        <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0">
-            <!-- Left part (Image or any relevant content) -->
-            <div class="flex-1 space-y-6">
-                <!-- First image -->
-                <div class="mb-6">
-                    <img src="homo1.png" alt="Image 1" class="w-full h-auto max-w-md rounded-lg shadow-md mx-auto">
-                </div>
+<!-- Appointment Booking Form -->
+<main class="container mx-auto p-4 flex-grow max-w-3xl">
+    <section id="appointment" class="bg-white rounded-lg shadow-lg p-4 md:p-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-6 text-center">Book Appointment</h2>
 
-                <!-- Second image -->
-                <div class="mb-6">
-                    <img src="homo2.png" alt="Image 2" class="w-full h-auto max-w-md rounded-lg shadow-md mx-auto">
-                </div>
-            </div>
+        <!-- Flex Container: Images + Form -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start lg:space-x-8">
+            
+           <!-- Left Part: Images -->
+        <div class="flex-1 flex flex-col items-center justify-center space-y-4">
+                <img src="homo1.png" alt="Image 1"
+                    class="w-48 h-auto rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+                <img src="homo2.png" alt="Image 2"
+                    class="w-48 h-auto rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+                <img src="homo3.png" alt="Image 2"
+                    class="w-48 h-auto rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        </div>
 
-            <!-- Right part (Appointment Form) -->
-            <div class="lg:w-1/2 flex-1">
-                <form id="appointment-form" class="space-y-6">
-                    <div class="space-y-2">
-                        <label for="appt-name" class="block font-semibold text-gray-700">Name:</label>
+
+            <!-- Right Part: Appointment Form -->
+            <div class="flex-1 w-full lg:max-w-sm">
+                <form id="appointment-form" class="space-y-4">
+                    <!-- Name -->
+                    <div>
+                        <label for="appt-name" class="block text-gray-700 font-medium mb-1">Name</label>
                         <input type="text" id="appt-name" name="name" required
-                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                            class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none transition">
                     </div>
-                    <div class="space-y-2">
-                        <label for="phone" class="block font-semibold text-gray-700">Phone No.:</label>
+
+                    <!-- Phone -->
+                    <div>
+                        <label for="phone" class="block text-gray-700 font-medium mb-1">Phone No.</label>
                         <input type="tel" id="phone" name="phone" required
-                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                            class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none transition">
                     </div>
-                    <div class="space-y-2">
-                        <label for="age" class="block font-semibold text-gray-700">Age:</label>
-                        <input type="number" id="age" name="age" required
-                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+
+                    <!-- Age + Gender -->
+                    <div class="flex space-x-4">
+                        <div class="w-1/2">
+                            <label for="age" class="block text-gray-700 font-medium mb-1">Age</label>
+                            <input type="number" id="age" name="age" required
+                                class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none transition">
+                        </div>
+                        <div class="w-1/2">
+                            <label for="gender" class="block text-gray-700 font-medium mb-1">Gender</label>
+                            <select id="gender" name="gender" required
+                                class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none transition">
+                                <option value="" disabled selected>Select</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="space-y-2">
-                        <label for="gender" class="block font-semibold text-gray-700">Gender:</label>
-                        <select id="gender" name="gender" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="space-y-2">
-                        <label for="appt-date" class="block font-semibold text-gray-700">Appointment Date:</label>
+
+                    <!-- Appointment Date -->
+                    <div>
+                        <label for="appt-date" class="block text-gray-700 font-medium mb-1">Appointment Date</label>
                         <input type="date" id="appt-date" name="date" required
-                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                            class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none transition">
                     </div>
-                    <div class="space-y-2">
-                        <label for="complaints" class="block font-semibold text-gray-700">Complaints/Symptoms:</label>
-                        <textarea id="complaints" name="complaints" required
-                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition"></textarea>
+
+                    <!-- Complaints/Symptoms -->
+                    <div>
+                        <label for="complaints" class="block text-gray-700 font-medium mb-1">Complaints/Symptoms</label>
+                        <textarea id="complaints" name="complaints" rows="2" required
+                            class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none transition"></textarea>
                     </div>
-                    <div class="space-y-2">
-                        <label for="remarks" class="block font-semibold text-gray-700">Remarks:</label>
-                        <textarea id="remarks" name="remarks"
-                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition"></textarea>
+                    <div>
+                        <label for="remarks" class="block text-gray-700 font-medium mb-1">Remarks:</label>
+                        <textarea id="remarks" name="remarks" rows="2" required
+                            class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none transition"></textarea>
                     </div>
-                    <div class="space-y-2">
-                        <label for="email" class="block font-semibold text-gray-700">Your Email:</label>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-1">Email</label>
                         <input type="email" id="email" name="email" required
-                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                            class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 outline-none transition">
                     </div>
-                    <button type="submit"
-                        class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500 transition">
-                        Book Appointment
-                    </button>
+
+                    <!-- Submit Button -->
+                    <div class="flex justify-end">
+                        <button type="submit"
+                            class="bg-blue-600 text-white font-medium px-6 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                            Book Appointment
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
     </section>
 </main>
+
 
 
     <footer class="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-4 mt-auto">
