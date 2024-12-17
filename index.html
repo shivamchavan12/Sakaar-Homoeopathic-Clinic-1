@@ -7,9 +7,10 @@
     <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
             background: linear-gradient(45deg, #d6e9ff, #e0f7ff, #f1fbff, #f7fcfe);
             background-size: 400% 400%;
             animation: gradientAnimation 15s ease infinite;
@@ -34,7 +35,7 @@
             flex: 1;
         }
         h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Lora', serif;
         }
 
         .fade-in {
@@ -112,7 +113,8 @@
             <h1 class="text-3xl font-extrabold tracking-wide text-white">Sakaar Homoeopathic Clinic</h1>
             <!-- Desktop Navigation Menu -->
             <nav class="hidden md:flex space-x-8 mt-4">
-                <a href="index.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Home</a>
+                <a href="index.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Home1</a>
+                <a href="index1st.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Home2</a>
                 <a href="about.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">About</a>
                 <a href="clinic.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Clinic</a>
                 <a href="gallery.html" class="text-white font-bold text-base md:text-xl hover:text-teal-200 transition duration-300">Gallery</a>
@@ -125,7 +127,8 @@
             <button class="md:hidden text-2xl focus:outline-none ml-auto" id="menu-toggle">&#9776;</button>
         </div>
         <nav id="mobile-menu" class="hidden md:hidden flex flex-col bg-teal-600 text-white">
-            <a href="index.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Home</a>
+            <a href="index.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Home1</a>
+            <a href="index1st.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Home2</a>
             <a href="about.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">About</a>
             <a href="clinic.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Clinic</a>
             <a href="gallery.html" class="px-4 py-2 text-white hover:bg-teal-500 transition">Gallery</a>
@@ -158,23 +161,30 @@
 
 
     <!-- Doctor's Information Section -->
-    <section id="doctor-info" class="container mx-auto my-8 p-6 bg-white rounded-lg shadow-lg fade-in">
-        <h2 class="text-2xl font-semibold text-teal-600 text-center md:text-left">Meet Our Specialist</h2>
-        <div class="flex flex-col md:flex-row items-center mt-6">
-            <img src="dr.Sarika_Kiran_Vaidya.png" alt="Doctor's Photo" class="w-40 h-40 rounded-full shadow-md hover-glow">
-            <div class="mt-6 md:mt-0 md:ml-8">
-                <h3 class="text-lg font-bold text-gray-800">Dr. Sarika Vaidya</h3>
-                <p class="mt-3 text-gray-700"><strong>Qualifications:</strong> M.D. Homoeopathy</p>
-                <p class="mt-3 text-gray-700"><strong>Experience:</strong> 23 years of successful practice</p>
-                <p class="mt-3 text-gray-700"><strong>Specialties:</strong> Classical Homoeopathy</p>
-                <p class="mt-3 text-gray-700"><strong>Profile:</strong></p>
-                <ul class="mt-3 text-gray-700 list-disc ml-5">
+    <section id="doctor-info" class="container mx-auto my-8 p-6 bg-white rounded-xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl hover:bg-teal-50 fade-in">
+        <h2 class="text-4xl font-semibold text-teal-600 text-center md:text-left">Meet Our Specialist</h2>
+        <div class="flex flex-col md:flex-row items-center mt-6 gap-8 md:gap-12">
+            <!-- Doctor's Image -->
+            <div class="flex-shrink-0">
+                <img src="dr.Sarika_Kiran_Vaidya.png" alt="Doctor's Photo" class="w-64 h-64 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
+            </div>
+            
+            <!-- Doctor Info -->
+            <div class="md:flex-1">
+                <h3 class="text-2xl font-bold text-gray-800 hover:text-teal-600 transition-all duration-300">Dr. Sarika Vaidya</h3>
+                <p class="mt-3 text-gray-600 text-lg"><strong>Qualifications:</strong> M.D. Homoeopathy</p>
+                <p class="mt-3 text-gray-600 text-lg"><strong>Experience:</strong> 23 years of successful practice</p>
+                <p class="mt-3 text-gray-600 text-lg"><strong>Specialties:</strong> Classical Homoeopathy</p>
+                
+                <p class="mt-4 text-gray-600"><strong>Profile:</strong></p>
+                <ul class="mt-3 text-gray-600 list-disc ml-5">
                     <li>Senior Homoeopathic Consultant with a remarkable academic record.</li>
                     <li>Expert in diagnosing diseases, understanding human behavior, and prescribing accurate treatments.</li>
                     <li>Dedicated to achieving rapid and gentle cures for patients.</li>
                     <li>Associate of several renowned medical and homoeopathic institutions in India.</li>
                 </ul>
-                <p class="mt-3 text-gray-700"><strong>Contact:</strong> [Phone Number] | [Email]</p>
+                
+                <p class="mt-4 text-gray-600"><strong>Contact:</strong> <span class="text-teal-500">[Phone Number]</span> | <span class="text-teal-500">[Email]</span></p>
             </div>
         </div>
     </section>
@@ -188,9 +198,61 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-4 mt-8">
-        <p class="text-center">&copy; 2024 Homoeopathy Clinic. All rights reserved.</p>
-    </footer>
+<footer class="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-8">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <!-- Contact Info -->
+        <div class="md:w-1/3 flex flex-col items-center md:items-start mb-6 md:mb-0 md:pl-8">
+    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+    <p>Phone: <a href="tel:+1234567890" class="underline hover:text-gray-200">+123 456 7890</a></p>
+    <p>Email: <a href="mailto:info@homoeoclinic.com" class="underline hover:text-gray-200">info@homoeoclinic.com</a></p>
+    <p>Address: 123 Main Street, Your City, Your Country</p>
+</div>
+
+        <!-- Quick Links -->
+        <div class="md:w-1/3 flex flex-col items-center">
+            <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+                <li><a href="index.html" class="hover:underline hover:text-gray-200">Home</a></li>
+                <li><a href="about.html" class="hover:underline hover:text-gray-200">About Us</a></li>
+                <li><a href="clinic.html" class="hover:underline hover:text-gray-200">Services</a></li>
+                <li><a href="appointment.html" class="hover:underline hover:text-gray-200">Book Appointment</a></li>
+                <li><a href="privacy.html" class="hover:underline hover:text-gray-200">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="md:w-1/3 flex flex-col items-center">
+            <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+            <ul class="space-y-2">
+                <li>
+                    <a href="https://facebook.com" target="_blank" class="flex items-center space-x-2 hover:text-gray-200">
+                        <i class="fab fa-facebook-f text-blue-600"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com" target="_blank" class="flex items-center space-x-2 hover:text-gray-200">
+                        <i class="fab fa-twitter text-blue-400"></i>
+                        <span>Twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com" target="_blank" class="flex items-center space-x-2 hover:text-gray-200">
+                        <i class="fab fa-instagram text-pink-500"></i>
+                        <span>Instagram</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mt-8 text-center text-sm">
+        <p>&copy; 2024 Sakaar Homoeopathic Clinic. All rights reserved.</p>
+        <p><a href="terms.html" class="hover:underline hover:text-gray-200">Terms of Use</a> | <a href="privacy.html" class="hover:underline hover:text-gray-200">Privacy Policy</a></p>
+    </div>
+</footer>
+
+
 
     <script>
         const menuToggle = document.getElementById('menu-toggle');

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Homeopathy</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #F1E8C8, #E4D18E, #F1E8C8, #E4D18E); /* Lighter shades */
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            color: #800000; /* Maroon-red text color */
+        }
+
+        /* Animation for fading the gradient */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        main {
+            flex: 1; /* Allows the main content to grow and take available space */
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif; /* Elegant font for headings */
+            color: #800000; /* Maroon-red color for headings */
+        }
+
+        a {
+            color: #800000; /* Maroon-red color for links */
+        }
+
+        a:hover {
+            color: #b30000; /* Slightly brighter maroon for hover effect */
+        }
+
+        header {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow below the header */
+        }
+    </style>
+</head>
+<body class="bg-sandy-200 text-maroon-800 flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white text-black shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <!-- Logo and Title with redirect to index.html -->
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="Clinic Logo" class="w-12 h-12 rounded-full object-cover mr-4 border-4 border-black">
+                <span class="text-3xl font-extrabold tracking-wide">Sakaar Homoeopathic</span>
+            </a>
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="font-bold hover:text-teal-200 transition duration-300">Home</a>
+                <a href="about.html" class="font-bold hover:text-teal-200 transition duration-300">About</a>
+                <a href="clinic.html" class="font-bold hover:text-teal-200 transition duration-300">Clinic</a>
+                <a href="gallery.html" class="font-bold hover:text-teal-200 transition duration-300">Gallery</a>
+                <a href="contact.html" class="font-bold hover:text-teal-200 transition duration-300">Contact</a>
+                <a href="appointment.html" class="font-bold hover:text-teal-200 transition duration-300">Appointment</a>
+                <a href="testimonials.html" class="font-bold hover:text-teal-200 transition duration-300">Testimonials</a>
+                <a href="awards.html" class="font-bold hover:text-teal-200 transition duration-300">Awards</a>
+            </nav>
+            <!-- Mobile Menu Toggle Button -->
+            <button class="md:hidden text-2xl focus:outline-none" id="menu-toggle">&#9776;</button>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <nav id="mobile-menu" class="hidden md:hidden flex flex-col bg-maroon-800 text-white">
+            <a href="index.html" class="font-bold px-4 py-2 hover:bg-maroon-700 transition">Home</a>
+            <a href="about.html" class="font-bold px-4 py-2 hover:bg-maroon-700 transition">About</a>
+            <a href="clinic.html" class="font-bold px-4 py-2 hover:bg-maroon-700 transition">Clinic</a>
+            <a href="gallery.html" class="font-bold px-4 py-2 hover:bg-maroon-700 transition">Gallery</a>
+            <a href="contact.html" class="font-bold px-4 py-2 hover:bg-maroon-700 transition">Contact</a>
+            <a href="appointment.html" class="font-bold px-4 py-2 hover:bg-maroon-700 transition">Appointment</a>
+            <a href="testimonials.html" class="font-bold px-4 py-2 hover:bg-maroon-700 transition">Testimonials</a>
+            <a href="awards.html" class="font-bold px-4 py-2 hover:bg-maroon-700 transition">Awards</a>
+        </nav>
+    </header>
+
+   
+    <!-- logo Section -->
+    <section id="doctor-logo" class="container mx-auto my-8 p-6 bg-[#C66262] text-white opacity rounded-lg shadow-lg fade-in">
+    <div class="flex flex-col items-center mt-6 animate__animated animate__fadeInUp">
+        <!-- Logo with border and hover effect -->
+        <img src="logo.png" alt="Doctor's Logo" class="w-40 h-40 rounded-full shadow-lg border border-maroon-200 hover:scale-110 hover:shadow-2xl transition-transform duration-300 ease-in-out mb-2">
+        <!-- Name -->
+        <h3 class="text-3xl font-bold text-white mt-4 animate__animated animate__fadeIn animate__delay-1s">
+            Sakaar Homoeopathic Clinic
+        </h3>
+    </div>
+</section>
+
+
+    <!-- Welcome Section -->
+    <section class="container mx-auto my-4 p-4 bg-gradient-to-r from-white to-sandy-50 rounded-lg shadow-lg fade-in">
+        <h1 class="text-3xl font-extrabold text-maroon-600 mb-4 text-center md:text-left">Welcome to Sakaar Homoeopathic Clinic</h1>
+        <p class="text-gray-700 leading-7 text-lg">A Practo certified clinic with professional infrastructure, including a well-equipped homoeopathic pharmacy, dedicated to enhancing the quality of patients' lives...</p>
+        <p class="mt-4 text-gray-700 leading-7 text-lg">In response to the challenges posed by the pandemic, we also offer 'Online Medical Consultation'...</p>
+    </section>
+
+    <!-- Doctor's Information Section -->
+    <section id="doctor-info" class="container mx-auto my-8 p-6 bg-white rounded-xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl hover:bg-sandy-50 fade-in">
+        <h2 class="text-4xl font-semibold text-maroon-600 text-center md:text-left">Meet Our Specialist</h2>
+        <div class="flex flex-col md:flex-row items-center mt-6 gap-8 md:gap-12">
+            <!-- Doctor's Image -->
+            <div class="flex-shrink-0">
+                <img src="dr.Sarika_Kiran_Vaidya.png" alt="Doctor's Photo" class="w-64 h-64 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
+            </div>
+            
+            <!-- Doctor Info -->
+            <div class="md:flex-1">
+                <h3 class="text-2xl font-bold text-gray-800 hover:text-maroon-600 transition-all duration-300">Dr. Sarika Vaidya</h3>
+                <p class="mt-3 text-gray-600 text-lg"><strong>Qualifications:</strong> M.D. Homoeopathy</p>
+                <p class="mt-3 text-gray-600 text-lg"><strong>Experience:</strong> 23 years of successful practice</p>
+                <p class="mt-3 text-gray-600 text-lg"><strong>Specialties:</strong> Classical Homoeopathy</p>
+                
+                <p class="mt-4 text-gray-600"><strong>Profile:</strong></p>
+                <ul class="mt-3 text-gray-600 list-disc ml-5">
+                    <li>Senior Homoeopathic Consultant with a remarkable academic record.</li>
+                    <li>Expert in diagnosing diseases, understanding human behavior, and prescribing accurate treatments.</li>
+                    <li>Dedicated to achieving rapid and gentle cures for patients.</li>
+                    <li>Associate of several renowned medical and homoeopathic institutions in India.</li>
+                </ul>
+                
+                <p class="mt-2 text-gray-600"><strong>Contact:</strong> <span class="text-maroon-500">[Phone Number]</span> | <span class="text-maroon-500">[Email]</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Director's Message Section -->
+    <section id="director-message" class="container mx-auto my-8 p-6 bg-gradient-to-r from-white to-maroon-50 rounded-lg shadow-lg fade-in">
+        <h2 class="text-4xl font-semibold text-maroon-600 text-center md:text-left">Message from the Director</h2>
+        <blockquote class="mt-6 text-gray-700 italic border-l-4 border-maroon-600 pl-6 text-lg">
+            “Entrepreneurship has experienced an upswing in the number of women willing to be a part of it. However, in this dynamic journey, they are somehow compelled to neglect their health. These days, women seem to adopt a role opposite to their nature, thinking it is the only possible way to be at par with men, but they must be aware of the fact that their elegant yet passionate feminist character is in its way the best path to success. It should be treated as a blessing to be a ‘woman’ and everyday should be owed to celebrate feminism.”
+        </blockquote>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer class="bg-black text-white py-4 mt-8">
+        <p class="text-center">&copy; 2024 Homoeopathy Clinic. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Add fade-in animation on scroll
+        const fadeInElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        fadeInElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

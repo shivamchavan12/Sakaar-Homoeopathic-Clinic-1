@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
             background: linear-gradient(45deg, #d6e9ff, #e0f7ff, #f1fbff, #f7fcfe);
             background-size: 400% 400%;
             animation: gradientAnimation 15s ease infinite;
@@ -34,7 +34,7 @@
             flex: 1; /* Allows the main content to grow and take available space */
         }
         h1, h2, h3 {
-            font-family: 'Playfair Display', serif; /* Elegant font for headings */
+            font-family: 'Lora', serif;/* Elegant font for headings */
         }
         .fade-in {
             opacity: 0;
@@ -58,6 +58,18 @@
         .nav-link:hover {
             color: #81c784; /* Soft green on hover */
         }
+        .grid .bg-white:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Apply the hover-glow effect specifically to the vertical cards */
+        .grid .bg-white:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 0px 20px rgba(72, 232, 227, 0.7);
+        }
+        
     </style>
 </head>
 <body class="text-gray-800">
@@ -137,66 +149,68 @@
                 </div>
             </div>
         </section>
+
+
         <!-- Additional Treatment Options -->
-<section id="treatments" class="mt-12">
-    <h2 class="text-3xl font-bold text-blue-600 mb-8 text-center">Our Treatment Specializations</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <!-- Treatment 1: Hair Fall Treatment -->
-        <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
-            <img src="hairfall.jpg" alt="Hair Fall Treatment" class="w-16 h-16 mx-auto mb-4">
-            <h3 class="text-lg font-semibold text-blue-500 mb-2">Hair Fall Treatment</h3>
-            <p class="text-gray-700">Hopeless by hair loss? Get the best treatment. Homeopathy is the right solution for your hair problems.</p>
-        </div>
+        <section id="treatments" class="mt-12 fade-in">
+            <h2 class="text-3xl font-bold text-blue-600 mb-8 text-center">Our Treatment Specializations</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Treatment 1: Hair Fall Treatment -->
+                <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="hairfall.jpg" alt="Hair Fall Treatment" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold text-blue-500 mb-2">Hair Fall Treatment</h3>
+                    <p class="text-gray-700">Hopeless by hair loss? Get the best treatment. Homeopathy is the right solution for your hair problems.</p>
+                </div>
 
-        <!-- Treatment 2: Skin Treatment -->
-        <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
-            <img src="skin.png" alt="Skin Treatment" class="w-16 h-16 mx-auto mb-4">
-            <h3 class="text-lg font-semibold text-blue-500 mb-2">Skin Treatment</h3>
-            <p class="text-gray-700">Don’t take your skin for granted! Homeopathy believes in treating the person as a whole, not just the infection.</p>
-        </div>
+                <!-- Treatment 2: Skin Treatment -->
+                <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="skin.png" alt="Skin Treatment" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold text-blue-500 mb-2">Skin Treatment</h3>
+                    <p class="text-gray-700">Don’t take your skin for granted! Homeopathy believes in treating the person as a whole, not just the infection.</p>
+                </div>
 
-        <!-- Treatment 3: PCOS Treatment -->
-        <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
-            <img src="psco.png" alt="PCOS Treatment" class="w-16 h-16 mx-auto mb-4">
-            <h3 class="text-lg font-semibold text-blue-500 mb-2">PCOS Treatment</h3>
-            <p class="text-gray-700">Homeopathy treatment for PCOS without any side effects.</p>
-        </div>
+                <!-- Treatment 3: PCOS Treatment -->
+                <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="psco.png" alt="PCOS Treatment" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold text-blue-500 mb-2">PCOS Treatment</h3>
+                    <p class="text-gray-700">Homeopathy treatment for PCOS without any side effects.</p>
+                </div>
 
-        <!-- Treatment 4: Thyroid Treatment -->
-        <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
-            <img src="thyroid.png" alt="Thyroid Treatment" class="w-16 h-16 mx-auto mb-4">
-            <h3 class="text-lg font-semibold text-blue-500 mb-2">Thyroid Treatment</h3>
-            <p class="text-gray-700">Treat it immediately before the small thyroid gland leads to big problems.</p>
-        </div>
+                <!-- Treatment 4: Thyroid Treatment -->
+                <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="thyroid.png" alt="Thyroid Treatment" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold text-blue-500 mb-2">Thyroid Treatment</h3>
+                    <p class="text-gray-700">Treat it immediately before the small thyroid gland leads to big problems.</p>
+                </div>
 
-        <!-- Treatment 5: Migraine Treatment -->
-        <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
-            <img src="migraine.png" alt="Migraine Treatment" class="w-16 h-16 mx-auto mb-4">
-            <h3 class="text-lg font-semibold text-blue-500 mb-2">Migraine Treatment</h3>
-            <p class="text-gray-700">Reduce the frequency and intensity of subsequent migraine attacks by taking the best homeopathy treatment.</p>
-        </div>
+                <!-- Treatment 5: Migraine Treatment -->
+                <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="migraine.png" alt="Migraine Treatment" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold text-blue-500 mb-2">Migraine Treatment</h3>
+                    <p class="text-gray-700">Reduce the frequency and intensity of subsequent migraine attacks by taking the best homeopathy treatment.</p>
+                </div>
 
-        <!-- Treatment 6: Psoriasis Treatment -->
-        <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
-            <img src="skin-disease.png" alt="Psoriasis Treatment" class="w-16 h-16 mx-auto mb-4">
-            <h3 class="text-lg font-semibold text-blue-500 mb-2">Psoriasis Treatment</h3>
-            <p class="text-gray-700">Homeopathy is the first treatment option for psoriasis. Start your journey towards healing this disease.</p>
-        </div>
-        <!-- Additional Treatment 7: Arthritis Treatment -->
-        <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
-            <img src="arthritis.png" alt="Arthritis Treatment" class="w-16 h-16 mx-auto mb-4">
-            <h3 class="text-lg font-semibold text-blue-500 mb-2">Arthritis Treatment</h3>
-            <p class="text-gray-700">Alleviate the pain and discomfort caused by arthritis with effective homeopathic remedies that target the root cause of the condition.</p>
-        </div>
+                <!-- Treatment 6: Psoriasis Treatment -->
+                <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="skin-disease.png" alt="Psoriasis Treatment" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold text-blue-500 mb-2">Psoriasis Treatment</h3>
+                    <p class="text-gray-700">Homeopathy is the first treatment option for psoriasis. Start your journey towards healing this disease.</p>
+                </div>
+                <!-- Additional Treatment 7: Arthritis Treatment -->
+                <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="arthritis.png" alt="Arthritis Treatment" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold text-blue-500 mb-2">Arthritis Treatment</h3>
+                    <p class="text-gray-700">Alleviate the pain and discomfort caused by arthritis with effective homeopathic remedies that target the root cause of the condition.</p>
+                </div>
 
-        <!-- Additional Treatment 8: Digestive Health Treatment -->
-        <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
-            <img src="digestive-system.png" alt="Digestive Health Treatment" class="w-16 h-16 mx-auto mb-4">
-            <h3 class="text-lg font-semibold text-blue-500 mb-2">Digestive Health Treatment</h3>
-            <p class="text-gray-700">Homeopathy offers natural and safe solutions to digestive issues such as bloating, indigestion, and irritable bowel syndrome (IBS).</p>
-        </div>
-    </div>
-</section>
+                <!-- Additional Treatment 8: Digestive Health Treatment -->
+                <div class="treatment-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="digestive-system.png" alt="Digestive Health Treatment" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold text-blue-500 mb-2">Digestive Health Treatment</h3>
+                    <p class="text-gray-700">Homeopathy offers natural and safe solutions to digestive issues such as bloating, indigestion, and irritable bowel syndrome (IBS).</p>
+                </div>
+            </div>
+        </section>
 
     </main>
 
