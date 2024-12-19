@@ -225,7 +225,6 @@
             // Submit the form data to EmailJS
             emailjs.sendForm('service_x4wl48l', 'template_ddgfwqd', form)
                 .then(function(response) {
-                    alert('New Appointment Alert');
                     form.reset(); // Reset form fields
                 }, function(error) {
                     alert('Failed to send email. Please try again later.');
